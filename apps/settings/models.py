@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django.db import models
 
 # Create your models here.
@@ -18,3 +19,15 @@ class Setting(models.Model):
     class Meta:
         verbose_name = "Настройка"
         verbose_name_plural = "Настройки"
+
+class Action(models.Model):
+    image = models.ImageField(upload_to = "action/")
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title 
+
+    class Meta:
+        verbose_name = "Акция"
+        verbose_name_plural = "Акции"

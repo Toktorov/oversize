@@ -9,19 +9,18 @@ class Product(models.Model):
     rating = models.IntegerField()
     description = models.TextField()
     count = models.IntegerField()
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name = "product_category")
 
     def __str__(self):
         return self.title 
 
     class Meta:
-        verbose_name = "Продукт"
-        verbose_name_plural = "Продукты"
+        verbose_name = "Товар"
+        verbose_name_plural = "Товары"
 
 class ProductImage(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_image")
     image = models.ImageField(upload_to = 'product_image/')
 
-    def __str__(self):
-        return self.product
+   
         
