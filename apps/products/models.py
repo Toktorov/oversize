@@ -5,6 +5,7 @@ from apps.categories.models import Category
 class Product(models.Model):
     title = models.CharField(max_length=255)
     price = models.IntegerField()
+    product_img = models.ImageField('product_img/')
     old_price = models.IntegerField()
     rating = models.IntegerField()
     description = models.TextField()
