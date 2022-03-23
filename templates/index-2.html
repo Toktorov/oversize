@@ -300,8 +300,8 @@
                                             <a class="product__items--content__tag" href="product-details.html">{{product.category}}</a>
                                             <h3 class="product__items--content__title h4"><a href="{% url 'product_detail' product.id %}">{{ product.title }}</a></h3>
                                             <div class="product__items--price">
-                                                <span class="current__price">${{ product.price }}</span>
-                                                <span class="old__price">${{ product.old_price }}</span>
+                                                <span class="current__price">{{ product.currency }} {{ product.price }}</span>
+                                                <span class="old__price">{{ product.currency }} {{ product.old_price }}</span>
                                             </div>
                                             
                                             <ul class="rating product__items--rating d-flex justify-content-center">
@@ -3504,19 +3504,21 @@
                     <h2 class="section__heading--maintitle">Вам понравится</h2>
                 </div>
                 <div class="product__section--container">
+                    {% for one in one_random_product %}
                     <div class="row">
                         <div class="col-lg-5 col-md-8 col-md-order offset-md-2 offset-lg-0">
                             <div class="product__banner">
-                                <a class="product__banner--thumbnail display-block position__relative" href="shop.html"><img class="product__banner--thumbnail__img display-block" src="https://vsekrossovki.in.ua/images/product/l/2771ed229d.jpg" alt="banner-img">
+                                <a class="product__banner--thumbnail display-block position__relative" href="{% url 'product_detail' one.id %}"><img class="product__banner--thumbnail__img display-block" src="{{ one.product_img.url }}" alt="banner-img">
                                     <div class="product__banner--content">
                                         <h4 class="product__banner--content__subtitle text-white">Предложение с ограниченной ценой! </h4>
-                                        <h3 class="product__banner--content--title text-white">Кроссовки <br>
-                                            Nike Zoom Fly 4 </h3>
-                                        <span class="product__banner--content__price text-white">$17999</span>
+                                        <h3 class="product__banner--content--title text-white">{{ one.category }} <br>
+                                            {{ one.title }} </h3>
+                                        <span class="product__banner--content__price text-white">${{ one.price }}</span>
                                     </div>
                                 </a>
                             </div>
                         </div>
+                        {% endfor %}
                         <div class="col-lg-7">
                             <div class="product__section--inner product__swiper--grid  product__swiper--column3 swiper">
                                 <div class="swiper-wrapper">
@@ -3570,8 +3572,13 @@
                                                 <a class="product__items--content__tag" href="{% url 'product_detail' product.id %}">{{ product.category }}</a>
                                                 <h3 class="product__items--content__title h4"><a href="{% url 'product_detail' product.id %}">{{ product.title }}</a></h3>
                                                 <div class="product__items--price">
-                                                    <span class="current__price">${{ product.price }}</span>
-                                                    <span class="old__price">${{ product.old_price }}</span>
+                                                    {% if product.currency %}
+                                                    <span class="current__price">{{ product.currency }} {{ product.price }}</span>
+                                                    <span class="old__price">{{ product.currency }} {{ product.old_price }}</span>
+                                                    {% else %}
+                                                    <span class="current__price">Цена не указана</span>
+                                                    <span class="old__price">Цена не указана</span>
+                                                    {% endif %}
                                                 </div>
                                                 
                                                 <ul class="rating product__items--rating d-flex justify-content-center">

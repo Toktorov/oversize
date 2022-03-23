@@ -1,12 +1,20 @@
+from locale import currency
 from django.db import models
 from apps.categories.models import Category
 
 # Create your models here.
 class Product(models.Model):
     title = models.CharField(max_length=255)
-    price = models.IntegerField()
     product_img = models.ImageField(upload_to = 'product_img/')
+    price = models.IntegerField()
     old_price = models.IntegerField(default=0)
+    CURRENCY_CHOICES = (
+        ('KGZ', 'KGZ'),
+        ('RUB', 'RUB'),
+        ('EURO', 'EURO'),
+        ('USD', 'USD'),
+    )
+    currency = models.CharField(choices=CURRENCY_CHOICES, max_length=255, default='KGZ', null = True)
     rating = models.IntegerField(default=0)
     description = models.TextField()
     count = models.IntegerField(default="0")

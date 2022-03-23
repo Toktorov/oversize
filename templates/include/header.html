@@ -47,23 +47,7 @@
                 </div>
                 <div class="language__currency style2 d-none d-lg-block">
                     <ul class="d-flex align-items-center">
-                        <li class="language__currency--list">
-                            <a class="account__currency--link style2" href="index-2.html#">
-                                <img src="{% static 'assets/img/icon/usd-icon.webp' %}" alt="currency">
-                                <span>Валюта </span> 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
-                                    <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
-                                </svg>
-                            </a>
-                            <div class="dropdown__currency">
-                                <ul>
-                                    <li class="currency__items"><a class="currency__text" href="index-2.html#">KGZ</a></li>
-                                    <li class="currency__items"><a class="currency__text" href="index-2.html#">RUB</a></li>
-                                    <li class="currency__items"><a class="currency__text" href="index-2.html#">EUR</a></li>
-                                    <li class="currency__items"><a class="currency__text" href="index-2.html#">USD</a></li>
-                                </ul>
-                            </div>
-                        </li>
+                        
                         <li class="language__currency--list">
                             <a class="language__switcher style2" href="index-2.html#">
                                 <img class="language__switcher--icon__img" src="{% static 'assets/img/icon/language-icon.webp' %}" alt="currency">
@@ -80,6 +64,27 @@
                                 </ul>
                             </div>
                         </li>
+                        {% if user.is_authenticated %}
+                        <li class="language__currency--list">
+                            <a class="account__currency--link style2" href="index-2.html#">
+                                <img src="{% static 'assets/img/icon/usd-icon.webp' %}" alt="currency">
+                                <span>{{user.username}} </span> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
+                                    <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
+                                </svg>
+                            </a>
+                            <div class="dropdown__currency">
+                                <ul>
+                                    <li class="currency__items"><a class="currency__text" href="index-2.html#">Мой аккаунт</a></li>
+                                    <li class="currency__items"><a class="currency__text" href="index-2.html#">Настройки</a></li>
+                                    <li class="currency__items"><a class="currency__text" href="{% url 'logout' %}">Выйти</a></li>
+                                  
+                                </ul>
+                            </div>
+                        </li>
+                        {% else %}
+                        <a href="{% url 'register_user' %}" >Войти или зарегистрироваться</a>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
