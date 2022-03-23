@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-lg-3 banner2__col--3">
                         <div class="banner__sidebar--two banner__items banner__sidebar2">
-                            <a class="banner__items--thumbnail position__relative" href="shop.html"><img class="banner__items--thumbnail__img banner__sidebar2--img" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/fb7eda3c-5ac8-4d05-a18f-1c2c5e82e36e/%D0%BA%D1%80%D0%BE%D1%81%D1%81%D0%BE%D0%B2%D0%BA%D0%B8-blazer-mid-77-vintage-CBDjT0.png" alt="banner-img">
+                            <a class="banner__items--thumbnail position__relative" href="{% url 'index' %}"><img class="banner__items--thumbnail__img banner__sidebar2--img" src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/fb7eda3c-5ac8-4d05-a18f-1c2c5e82e36e/%D0%BA%D1%80%D0%BE%D1%81%D1%81%D0%BE%D0%B2%D0%BA%D0%B8-blazer-mid-77-vintage-CBDjT0.png" alt="banner-img">
                                 <div class="banner__content--style2 banner__sidebar2--content">
                                     <h3 class="banner__content--style2__subtitle">Кроссовки</h3>
                                     <h2 class="banner__content--style2--title">Airsnakes - магазин кроссовок любых типов </h2>
@@ -184,7 +184,7 @@
                     </div>
                     {% endfor %}
                     <div class="col-lg-6 col-md-6 banner2__col--6r mb-28">
-                        {% for random in one_random_product %}
+                        {% for random in two_random_product %}
                         <div class="banner__items position__relative mb-25">
                             <a class="banner__items--thumbnail " href="{% url 'product_detail' random.id %}"><img href = "{% url 'product_detail' random.id %}" class="banner__items--thumbnail__img banner__img--height" src="{{ random.product_img.url }}" alt="banner-img">
                                 <div class="banner__content--style2">
@@ -258,7 +258,7 @@
                                                 <img class="product__items--img product__secondary--img" src="{{ product.product_img.url }}" alt="product-img">
                                             </a>
                                             <div class="product__badge style2">
-                                                <span class="product__badge--items style2 sale">-80%</span>
+                                                <span class="product__badge--items style2 sale">-20%</span>
                                             </div>
                                             <ul class="product__items--action style2">
                                                 <li class="product__items--action__list style2">
@@ -847,7 +847,7 @@
                                                 <img class="product__items--img product__secondary--img" src="assets/img/product/product1.webp" alt="product-img">
                                             </a>
                                             <div class="product__badge style2">
-                                                <span class="product__badge--items style2 sale">-80%</span>
+                                                <span class="product__badge--items style2 sale">-20%</span>
                                             </div>
                                             <ul class="product__items--action style2">
                                                 <li class="product__items--action__list style2">
@@ -1338,7 +1338,7 @@
                                                 <img class="product__items--img product__secondary--img" src="assets/img/product/product1.webp" alt="product-img">
                                             </a>
                                             <div class="product__badge style2">
-                                                <span class="product__badge--items style2 sale">-80%</span>
+                                                <span class="product__badge--items style2 sale">-20%</span>
                                             </div>
                                             <ul class="product__items--action style2">
                                                 <li class="product__items--action__list style2">
@@ -2215,7 +2215,7 @@
                                                 <img class="product__items--img product__secondary--img" src="assets/img/product/product1.webp" alt="product-img">
                                             </a>
                                             <div class="product__badge style2">
-                                                <span class="product__badge--items style2 sale">-80%</span>
+                                                <span class="product__badge--items style2 sale">-20%</span>
                                             </div>
                                             <ul class="product__items--action style2">
                                                 <li class="product__items--action__list style2">
@@ -2896,7 +2896,7 @@
                                                 <img class="product__items--img product__secondary--img" src="assets/img/product/product1.webp" alt="product-img">
                                             </a>
                                             <div class="product__badge style2">
-                                                <span class="product__badge--items style2 sale">-80%</span>
+                                                <span class="product__badge--items style2 sale">-20%</span>
                                             </div>
                                             <ul class="product__items--action style2">
                                                 <li class="product__items--action__list style2">
@@ -3529,7 +3529,7 @@
                                                     <img class="product__items--img product__secondary--img" src="{{ product.product_img.url }}" alt="product-img">
                                                 </a>
                                                 <div class="product__badge style2">
-                                                    <span class="product__badge--items style2 sale">-80%</span>
+                                                    <span class="product__badge--items style2 sale">-20%</span>
                                                 </div>
                                                 <ul class="product__items--action style2">
                                                     <li class="product__items--action__list style2">
@@ -3669,6 +3669,8 @@
                                 <h2 class="section__heading--maintitle">Что говорят наши лучшие клиенты</h2>
                             </div>
                             <div class=" testimonial__swiper--column3 testimonial__padding swiper">
+
+
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="testimonial__items--style2 position__relative border-radius-5 d-flex align-items-center">
@@ -3676,14 +3678,12 @@
                                                 <img class="testimonial__items--thumbnail__img display-block" src="{% static 'assets/img/other/testimonial-thumb1.webp' %}" alt="testimonial-img">
                                             </div>
                                             <div class="testimonial__content--style2">
-                                                <h3 class="testimonial__items--author__title h4">Abdur Razzak</h3>
-                                                <h4 class="testimonial__items--author__subtitle h5">Ui Ux Designer</h4> 
+                                                <h3 class="testimonial__items--author__title h4">Абдур Раззак</h3>
+                                                <h4 class="testimonial__items--author__subtitle h5">Постоянный клиент</h4> 
                                                 <p class="testimonial__items--desc style2"><svg xmlns="http://www.w3.org/2000/svg" width="8.101" height="6.481" viewBox="0 0 8.101 6.481">
                                                     <path  data-name="Icon metro-quote" d="M5.57,9.667v3.24H8.81V9.667H7.19a1.587,1.587,0,0,1,1.62-1.62V6.427A3.174,3.174,0,0,0,5.57,9.667Zm8.1-1.62V6.427a3.174,3.174,0,0,0-3.24,3.24v3.24h3.24V9.667h-1.62A1.587,1.587,0,0,1,13.671,8.047Z" transform="translate(-5.57 -6.427)" fill="currentColor"/>
                                                   </svg>
-                                                    Mum ut perspiciatis unde omnis 
-                                                    iste natus error sit voluptatem
-                                                    accusan tium doloremque. <svg xmlns="http://www.w3.org/2000/svg" width="7.774" height="6.803" viewBox="0 0 7.774 6.803">
+                                                    Хороший сайт для покупок <svg xmlns="http://www.w3.org/2000/svg" width="7.774" height="6.803" viewBox="0 0 7.774 6.803">
                                                         <path  data-name="Icon awesome-quote-right" d="M7.046,1.5H5.1a.729.729,0,0,0-.729.729V4.172A.729.729,0,0,0,5.1,4.9H6.317v.972a.973.973,0,0,1-.972.972H5.223a.364.364,0,0,0-.364.364v.729a.364.364,0,0,0,.364.364h.121a2.429,2.429,0,0,0,2.43-2.43V2.229A.729.729,0,0,0,7.046,1.5Zm-4.373,0H.729A.729.729,0,0,0,0,2.229V4.172A.729.729,0,0,0,.729,4.9H1.944v.972a.973.973,0,0,1-.972.972H.85a.364.364,0,0,0-.364.364v.729A.364.364,0,0,0,.85,8.3H.972A2.429,2.429,0,0,0,3.4,5.873V2.229A.729.729,0,0,0,2.672,1.5Z" transform="translate(0 -1.5)" fill="currentColor"/>
                                                       </svg>
                                                 </p>
@@ -3735,201 +3735,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="testimonial__items--style2 position__relative border-radius-5 d-flex align-items-center">
-                                            <div class="testimonial__thumbnail--style2">
-                                                <img class="testimonial__items--thumbnail__img display-block" src="{% static 'assets/img/other/testimonial-thumb2.webp' %}" alt="testimonial-img">
-                                            </div>
-                                            <div class="testimonial__content--style2">
-                                                <h3 class="testimonial__items--author__title h4">Hamid Khalid</h3>
-                                                <h4 class="testimonial__items--author__subtitle h5">Web Designer</h4> 
-                                                <p class="testimonial__items--desc style2"><svg xmlns="http://www.w3.org/2000/svg" width="8.101" height="6.481" viewBox="0 0 8.101 6.481">
-                                                    <path  data-name="Icon metro-quote" d="M5.57,9.667v3.24H8.81V9.667H7.19a1.587,1.587,0,0,1,1.62-1.62V6.427A3.174,3.174,0,0,0,5.57,9.667Zm8.1-1.62V6.427a3.174,3.174,0,0,0-3.24,3.24v3.24h3.24V9.667h-1.62A1.587,1.587,0,0,1,13.671,8.047Z" transform="translate(-5.57 -6.427)" fill="currentColor"/>
-                                                  </svg>
-                                                    Mum ut perspiciatis unde omnis 
-                                                    iste natus error sit voluptatem
-                                                    accusan tium doloremque. <svg xmlns="http://www.w3.org/2000/svg" width="7.774" height="6.803" viewBox="0 0 7.774 6.803">
-                                                        <path  data-name="Icon awesome-quote-right" d="M7.046,1.5H5.1a.729.729,0,0,0-.729.729V4.172A.729.729,0,0,0,5.1,4.9H6.317v.972a.973.973,0,0,1-.972.972H5.223a.364.364,0,0,0-.364.364v.729a.364.364,0,0,0,.364.364h.121a2.429,2.429,0,0,0,2.43-2.43V2.229A.729.729,0,0,0,7.046,1.5Zm-4.373,0H.729A.729.729,0,0,0,0,2.229V4.172A.729.729,0,0,0,.729,4.9H1.944v.972a.973.973,0,0,1-.972.972H.85a.364.364,0,0,0-.364.364v.729A.364.364,0,0,0,.85,8.3H.972A2.429,2.429,0,0,0,3.4,5.873V2.229A.729.729,0,0,0,2.672,1.5Z" transform="translate(0 -1.5)" fill="currentColor"/>
-                                                      </svg>
-                                                </p>
-                                                <ul class="rating testimonial__rating d-flex">
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                </ul>   
-                                            </div>
-                                            <div class="testimonial__quote--icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25.599" height="22.572" viewBox="0 0 25.599 22.572">
-                                                    <g  data-name="Group 382" transform="translate(-164 -5399)">
-                                                      <path  data-name="Path 131" d="M10.284,11.81a1.231,1.231,0,0,0,.62-1.652L9.892,8.031a1.235,1.235,0,0,0-1.611-.6A14.227,14.227,0,0,0,3.82,10.324,10.79,10.79,0,0,0,.826,15.052,25.936,25.936,0,0,0,0,22.321v6.34A1.243,1.243,0,0,0,1.239,29.9H9.355a1.243,1.243,0,0,0,1.239-1.239V20.545a1.243,1.243,0,0,0-1.239-1.239H5.472a8.707,8.707,0,0,1,1.446-5.018A7.849,7.849,0,0,1,10.284,11.81Z" transform="translate(164 5391.672)" fill="#f1f1f1"/>
-                                                      <path  data-name="Path 132" d="M80.963,11.89a1.231,1.231,0,0,0,.62-1.652L80.571,8.132a1.235,1.235,0,0,0-1.611-.6,14.959,14.959,0,0,0-4.44,2.87,11.021,11.021,0,0,0-3.015,4.75A25.587,25.587,0,0,0,70.7,22.4v6.34a1.243,1.243,0,0,0,1.239,1.239h8.116a1.243,1.243,0,0,0,1.239-1.239V20.625a1.243,1.243,0,0,0-1.239-1.239h-3.9A8.709,8.709,0,0,1,77.6,14.368,7.848,7.848,0,0,1,80.963,11.89Z" transform="translate(107.9 5391.592)" fill="#f1f1f1"/>
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="testimonial__items--style2 position__relative border-radius-5 d-flex align-items-center">
-                                            <div class="testimonial__thumbnail--style2">
-                                                <img class="testimonial__items--thumbnail__img display-block" src="{% static 'assets/img/other/testimonial-thumb3.webp' %}" alt="testimonial-img">
-                                            </div>
-                                            <div class="testimonial__content--style2">
-                                                <h3 class="testimonial__items--author__title h4">Sohidul Alam</h3>
-                                                <h4 class="testimonial__items--author__subtitle h5">CEO Peque Theme</h4> 
-                                                <p class="testimonial__items--desc style2"><svg xmlns="http://www.w3.org/2000/svg" width="8.101" height="6.481" viewBox="0 0 8.101 6.481">
-                                                    <path  data-name="Icon metro-quote" d="M5.57,9.667v3.24H8.81V9.667H7.19a1.587,1.587,0,0,1,1.62-1.62V6.427A3.174,3.174,0,0,0,5.57,9.667Zm8.1-1.62V6.427a3.174,3.174,0,0,0-3.24,3.24v3.24h3.24V9.667h-1.62A1.587,1.587,0,0,1,13.671,8.047Z" transform="translate(-5.57 -6.427)" fill="currentColor"/>
-                                                  </svg>
-                                                    Mum ut perspiciatis unde omnis 
-                                                    iste natus error sit voluptatem
-                                                    accusan tium doloremque. <svg xmlns="http://www.w3.org/2000/svg" width="7.774" height="6.803" viewBox="0 0 7.774 6.803">
-                                                        <path  data-name="Icon awesome-quote-right" d="M7.046,1.5H5.1a.729.729,0,0,0-.729.729V4.172A.729.729,0,0,0,5.1,4.9H6.317v.972a.973.973,0,0,1-.972.972H5.223a.364.364,0,0,0-.364.364v.729a.364.364,0,0,0,.364.364h.121a2.429,2.429,0,0,0,2.43-2.43V2.229A.729.729,0,0,0,7.046,1.5Zm-4.373,0H.729A.729.729,0,0,0,0,2.229V4.172A.729.729,0,0,0,.729,4.9H1.944v.972a.973.973,0,0,1-.972.972H.85a.364.364,0,0,0-.364.364v.729A.364.364,0,0,0,.85,8.3H.972A2.429,2.429,0,0,0,3.4,5.873V2.229A.729.729,0,0,0,2.672,1.5Z" transform="translate(0 -1.5)" fill="currentColor"/>
-                                                      </svg>
-                                                </p>
-                                                <ul class="rating testimonial__rating d-flex">
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                </ul>   
-                                            </div>
-                                            <div class="testimonial__quote--icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25.599" height="22.572" viewBox="0 0 25.599 22.572">
-                                                    <g  data-name="Group 382" transform="translate(-164 -5399)">
-                                                      <path  data-name="Path 131" d="M10.284,11.81a1.231,1.231,0,0,0,.62-1.652L9.892,8.031a1.235,1.235,0,0,0-1.611-.6A14.227,14.227,0,0,0,3.82,10.324,10.79,10.79,0,0,0,.826,15.052,25.936,25.936,0,0,0,0,22.321v6.34A1.243,1.243,0,0,0,1.239,29.9H9.355a1.243,1.243,0,0,0,1.239-1.239V20.545a1.243,1.243,0,0,0-1.239-1.239H5.472a8.707,8.707,0,0,1,1.446-5.018A7.849,7.849,0,0,1,10.284,11.81Z" transform="translate(164 5391.672)" fill="#f1f1f1"/>
-                                                      <path  data-name="Path 132" d="M80.963,11.89a1.231,1.231,0,0,0,.62-1.652L80.571,8.132a1.235,1.235,0,0,0-1.611-.6,14.959,14.959,0,0,0-4.44,2.87,11.021,11.021,0,0,0-3.015,4.75A25.587,25.587,0,0,0,70.7,22.4v6.34a1.243,1.243,0,0,0,1.239,1.239h8.116a1.243,1.243,0,0,0,1.239-1.239V20.625a1.243,1.243,0,0,0-1.239-1.239h-3.9A8.709,8.709,0,0,1,77.6,14.368,7.848,7.848,0,0,1,80.963,11.89Z" transform="translate(107.9 5391.592)" fill="#f1f1f1"/>
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="testimonial__items--style2 position__relative border-radius-5 d-flex align-items-center">
-                                            <div class="testimonial__thumbnail--style2">
-                                                <img class="testimonial__items--thumbnail__img display-block" src="{% static 'assets/img/other/testimonial-thumb1.webp' %}" alt="testimonial-img">
-                                            </div>
-                                            <div class="testimonial__content--style2">
-                                                <h3 class="testimonial__items--author__title h4">Abdur Razzak</h3>
-                                                <h4 class="testimonial__items--author__subtitle h5">Ui Ux Designer</h4> 
-                                                <p class="testimonial__items--desc style2"><svg xmlns="http://www.w3.org/2000/svg" width="8.101" height="6.481" viewBox="0 0 8.101 6.481">
-                                                    <path  data-name="Icon metro-quote" d="M5.57,9.667v3.24H8.81V9.667H7.19a1.587,1.587,0,0,1,1.62-1.62V6.427A3.174,3.174,0,0,0,5.57,9.667Zm8.1-1.62V6.427a3.174,3.174,0,0,0-3.24,3.24v3.24h3.24V9.667h-1.62A1.587,1.587,0,0,1,13.671,8.047Z" transform="translate(-5.57 -6.427)" fill="currentColor"/>
-                                                  </svg>
-                                                    Mum ut perspiciatis unde omnis 
-                                                    iste natus error sit voluptatem
-                                                    accusan tium doloremque. <svg xmlns="http://www.w3.org/2000/svg" width="7.774" height="6.803" viewBox="0 0 7.774 6.803">
-                                                        <path  data-name="Icon awesome-quote-right" d="M7.046,1.5H5.1a.729.729,0,0,0-.729.729V4.172A.729.729,0,0,0,5.1,4.9H6.317v.972a.973.973,0,0,1-.972.972H5.223a.364.364,0,0,0-.364.364v.729a.364.364,0,0,0,.364.364h.121a2.429,2.429,0,0,0,2.43-2.43V2.229A.729.729,0,0,0,7.046,1.5Zm-4.373,0H.729A.729.729,0,0,0,0,2.229V4.172A.729.729,0,0,0,.729,4.9H1.944v.972a.973.973,0,0,1-.972.972H.85a.364.364,0,0,0-.364.364v.729A.364.364,0,0,0,.85,8.3H.972A2.429,2.429,0,0,0,3.4,5.873V2.229A.729.729,0,0,0,2.672,1.5Z" transform="translate(0 -1.5)" fill="currentColor"/>
-                                                      </svg>
-                                                </p>
-                                                <ul class="rating testimonial__rating d-flex">
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                    <li class="rating__list">
-                                                        <span class="rating__list--icon">
-                                                            <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="11.105" height="11.732" viewBox="0 0 10.105 9.732">
-                                                                <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                            </svg>
-                                                        </span>
-                                                    </li>
-                                                </ul>   
-                                            </div>
-                                            <div class="testimonial__quote--icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25.599" height="22.572" viewBox="0 0 25.599 22.572">
-                                                    <g  data-name="Group 382" transform="translate(-164 -5399)">
-                                                      <path  data-name="Path 131" d="M10.284,11.81a1.231,1.231,0,0,0,.62-1.652L9.892,8.031a1.235,1.235,0,0,0-1.611-.6A14.227,14.227,0,0,0,3.82,10.324,10.79,10.79,0,0,0,.826,15.052,25.936,25.936,0,0,0,0,22.321v6.34A1.243,1.243,0,0,0,1.239,29.9H9.355a1.243,1.243,0,0,0,1.239-1.239V20.545a1.243,1.243,0,0,0-1.239-1.239H5.472a8.707,8.707,0,0,1,1.446-5.018A7.849,7.849,0,0,1,10.284,11.81Z" transform="translate(164 5391.672)" fill="#f1f1f1"/>
-                                                      <path  data-name="Path 132" d="M80.963,11.89a1.231,1.231,0,0,0,.62-1.652L80.571,8.132a1.235,1.235,0,0,0-1.611-.6,14.959,14.959,0,0,0-4.44,2.87,11.021,11.021,0,0,0-3.015,4.75A25.587,25.587,0,0,0,70.7,22.4v6.34a1.243,1.243,0,0,0,1.239,1.239h8.116a1.243,1.243,0,0,0,1.239-1.239V20.625a1.243,1.243,0,0,0-1.239-1.239h-3.9A8.709,8.709,0,0,1,77.6,14.368,7.848,7.848,0,0,1,80.963,11.89Z" transform="translate(107.9 5391.592)" fill="#f1f1f1"/>
-                                                    </g>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
+
+
                                 </div>
                                 <div class="testimonial__pagination swiper-pagination"></div>
                             </div>
@@ -3972,14 +3779,14 @@
         <section class="blog__section section--padding color-scheme-2 pt-0">
             <div class="container">
                 <div class="section__heading text-center mb-30">
-                    <h2 class="section__heading--maintitle">Последнее сообщение из блога</h2>
+                    <h2 class="section__heading--maintitle">Последние новости магазина</h2>
                 </div>
                 <div class="blog__section--inner blog__swiper--column3 swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="blog__items">
                                 <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="{% static 'assets/img/blog/blog1.webp' %}" alt="blog-img"></a>
+                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="https://all-psd.ru/uploads/posts/2/05678.jpg" alt="blog-img"></a>
                                 </div>
                                 <div class="blog__content">
                                     <ul class="blog__content--meta d-flex">
@@ -4007,7 +3814,7 @@
                         <div class="swiper-slide">
                             <div class="blog__items">
                                 <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="{% static 'assets/img/blog/blog2.webp' %}" alt="blog-img"></a>
+                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="https://img.freepik.com/free-vector/running-shoes-product-social-media-post-banner-template_252779-167.jpg" alt="blog-img"></a>
                                 </div>
                                 <div class="blog__content">
                                     <ul class="blog__content--meta d-flex">
@@ -4034,7 +3841,7 @@
                         <div class="swiper-slide">
                             <div class="blog__items">
                                 <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="{% static 'assets/img/blog/blog3.webp' %}" alt="blog-img"></a>
+                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="https://img.freepik.com/free-psd/fashion-shoes-banner-template_130513-140.jpg" alt="blog-img"></a>
                                 </div>
                                 <div class="blog__content">
                                     <ul class="blog__content--meta d-flex">
@@ -4061,7 +3868,7 @@
                         <div class="swiper-slide">
                             <div class="blog__items">
                                 <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="{% static 'assets/img/blog/blog4.webp' %}" alt="blog-img"></a>
+                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="https://img.freepik.com/free-psd/fashion-shoes-banner-template_130513-140.jpg" alt="blog-img"></a>
                                 </div>
                                 <div class="blog__content">
                                     <ul class="blog__content--meta d-flex">
@@ -4089,7 +3896,7 @@
                         <div class="swiper-slide">
                             <div class="blog__items">
                                 <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="{% static 'assets/img/blog/blog1.webp' %}" alt="blog-img"></a>
+                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="https://img.freepik.com/free-psd/fashion-shoes-banner-template_130513-140.jpg" alt="blog-img"></a>
                                 </div>
                                 <div class="blog__content">
                                     <ul class="blog__content--meta d-flex">

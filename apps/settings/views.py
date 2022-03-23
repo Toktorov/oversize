@@ -17,6 +17,7 @@ def index(request):
     actions = Action.objects.all().order_by('-id')[:4]
     expensive_products = Product.objects.all().order_by('-price')[:3]
     one_random_product = Product.objects.all().order_by('?')[:1]
+    two_random_product = Product.objects.all().order_by('?')[:1]
     context = {
         'home' : home,
         'categories' : categories,
@@ -26,6 +27,7 @@ def index(request):
         'actions' : actions,
         'expensive_products' : expensive_products,
         'one_random_product' : one_random_product,
+        'two_random_product' : two_random_product,
     }
     return render(request, 'index-2.html', context)
 

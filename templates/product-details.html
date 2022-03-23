@@ -17,8 +17,8 @@
                         <div class="breadcrumb__content">
                             <h1 class="breadcrumb__content--title text-white mb-10">{{ product.title }}</h1>
                             <ul class="breadcrumb__content--menu d-flex">
-                                <li class="breadcrumb__content--menu__items"><a class="text-white" href="index.html">Home</a></li>
-                                <li class="breadcrumb__content--menu__items"><span class="text-white">Product Details</span></li>
+                                <li class="breadcrumb__content--menu__items"><a class="text-white" href="{% url 'index' %}">Домой</a></li>
+                                <li class="breadcrumb__content--menu__items"><span class="text-white">Продукт</span></li>
                             </ul>
                         </div>
                     </div>
@@ -127,44 +127,25 @@
                                 <p class="product__details--info__desc mb-20">{{ product.description }}</p>
                                 <div class="product__variant">
                                     <div class="product__variant--list mb-20">
-                                        <fieldset class="variant__input--fieldset">
-                                            <legend class="product__variant--title mb-8">Color :</legend>
-                                            <div class="variant__color d-flex">
-                                                <div class="variant__color--list">
-                                                    <input id="color-red1" name="color" type="radio" checked>
-                                                    <label class="variant__color--value red" for="color-red1" title="Red"><img class="variant__color--value__img" src="{% static 'assets/img/product/product1.webp' %}" alt="variant-color-img"></label>
-                                                </div>
-                                                <div class="variant__color--list">
-                                                    <input id="color-red2" name="color" type="radio">
-                                                    <label class="variant__color--value red" for="color-red2" title="Black"><img class="variant__color--value__img" src="{% static 'assets/img/product/product6.webp' %}" alt="variant-color-img"></label>
-                                                </div>
-                                                <div class="variant__color--list">
-                                                    <input id="color-red3" name="color" type="radio">
-                                                    <label class="variant__color--value red" for="color-red3" title="Pink"><img class="variant__color--value__img" src="{% static 'assets/img/product/product7.webp' %}" alt="variant-color-img"></label>
-                                                </div>
-                                                <div class="variant__color--list">
-                                                    <input id="color-red4" name="color" type="radio">
-                                                    <label class="variant__color--value red" for="color-red4" title="Orange"><img class="variant__color--value__img" src="{% static 'assets/img/product/product4.webp' %}" alt="variant-color-img"></label>
-                                                </div>
-                                            </div>
-                                        </fieldset>
                                     </div>
                                     <div class="product__variant--list mb-20">
                                         <fieldset class="variant__input--fieldset">
-                                            <legend class="product__variant--title mb-8">Weight :</legend>
+                                            <legend class="product__variant--title mb-8">Размеры :</legend>
                                             <ul class="variant__size d-flex">
+                                                {% for size in product.product_size.all %}
                                                 <li class="variant__size--list">
                                                     <input id="weight1" name="weight" type="radio" checked>
-                                                    <label class="variant__size--value red" for="weight1">5 kg</label>
+                                                    <label class="variant__size--value red" for="weight1">{{ size.shoe_size }}</label>
                                                 </li>
-                                                <li class="variant__size--list">
+                                                {% endfor %}
+                                                <!-- <li class="variant__size--list">
                                                     <input id="weight2" name="weight" type="radio">
                                                     <label class="variant__size--value red" for="weight2">3 kg</label>
                                                 </li>
                                                 <li class="variant__size--list">
                                                     <input id="weight3" name="weight" type="radio">
                                                     <label class="variant__size--value red" for="weight3">2 kg</label>
-                                                </li>
+                                                </li> -->
                                             </ul>
                                         </fieldset>
                                     </div>
@@ -189,13 +170,13 @@
                                         <div class="product__details--info__meta">
                                             <p class="product__details--info__meta--list"><strong>Штрих-код:</strong>  <span>565461</span> </p>
                                             <p class="product__details--info__meta--list"><strong>Просмотров:</strong>  <span>4420</span> </p>
-                                            <p class="product__details--info__meta--list"><strong>Время создания:</strong>  <span>22.01.2022</span> </p>
+                                            <p class="product__details--info__meta--list"><strong>Время создания:</strong>  <span>{{ product.created }}</span> </p>
                                             <p class="product__details--info__meta--list"><strong>Категория:</strong>  <span>{{product.category}}</span> </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="quickview__social d-flex align-items-center mb-15">
-                                    <label class="quickview__social--title">Social Share:</label>
+                                    <label class="quickview__social--title">Поделиться в:</label>
                                     <ul class="quickview__social--wrapper mt-0 d-flex">
                                         <li class="quickview__social--list">
                                             <a class="quickview__social--icon" target="_blank" href="https://www.facebook.com">
@@ -232,7 +213,7 @@
                                     </ul>
                                 </div>
                                 <div class="guarantee__safe--checkout">
-                                    <h5 class="guarantee__safe--checkout__title">Guaranteed Safe Checkout</h5>
+                                    <h5 class="guarantee__safe--checkout__title">Гарантированная безопасная оплата</h5>
                                     <img class="guarantee__safe--checkout__img" src="{% static 'assets/img/other/safe-checkout.webp' %}" alt="Payment Image">
                                 </div>
                             </form>
